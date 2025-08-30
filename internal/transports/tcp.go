@@ -43,7 +43,7 @@ func (t *TCPTransport) Listen(ctx context.Context, addr string, opts *internal.L
 	}, nil
 }
 
-func (t *TCPListener) Dial(ctx context.Context, addr string, opts *internal.DialOptions) (internal.Conn, error) {
+func (t *TCPTransport) Dial(ctx context.Context, addr string, opts *internal.DialOptions) (internal.Conn, error) {
 	if opts == nil {
 		opts = &internal.DialOptions{
 			Timeout: 30 * time.Second,
