@@ -2,6 +2,7 @@ package internal
 
 import (
 	"context"
+	"io"
 	"net"
 	"time"
 )
@@ -19,6 +20,7 @@ type Listener interface {
 }
 
 type Conn interface {
+	io.ReadWriteCloser
 	ID() string
 	RemoteAddr() net.Addr
 	LocalAddr() net.Addr
